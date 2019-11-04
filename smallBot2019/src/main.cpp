@@ -63,15 +63,17 @@ void autonomous(){
   raise.startRotateFor(-.5,vex::rotationUnits::rev);
   driveLeftFront.startRotateFor(2, vex::rotationUnits::rev);
   driveRightFront.rotateFor(2, vex::rotationUnits::rev);
-  driveLeftFront.startRotateFor(.75,vex::rotationUnits::rev);
-  driveRightFront.rotateFor(-.75, vex::rotationUnits::rev);
+  driveLeftFront.startRotateFor(.6,vex::rotationUnits::rev);
+  driveRightFront.rotateFor(-.6, vex::rotationUnits::rev);
   driveLeftFront.startRotateFor(2,vex::rotationUnits::rev);
   driveRightFront.rotateFor(2,vex::rotationUnits::rev);\
-  driveLeftFront.startRotateFor(.75,vex::rotationUnits::rev);
-  driveRightFront.rotateFor(-.75, vex::rotationUnits::rev);
+  driveLeftFront.startRotateFor(.6,vex::rotationUnits::rev);
+  driveRightFront.rotateFor(-.6, vex::rotationUnits::rev);
   driveLeftFront.startRotateFor(2, vex::rotationUnits::rev);
   driveRightFront.rotateFor(2, vex::rotationUnits::rev);
   raise.startRotateFor(.5, vex::rotationUnits::rev);
+  lift1.startRotateFor(-5,vex::rotationUnits::rev);
+  lift2.startRotateFor(-5,vex::rotationUnits::rev);
 }
 //Spin the left wheels at a speed that represents a % of full speed(100 = full speed, 50 = half speed)
 void leftWheels(int speed){
