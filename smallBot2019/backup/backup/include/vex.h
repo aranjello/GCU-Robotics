@@ -21,21 +21,10 @@
 vex::brain Brain = vex::brain();
 vex::controller Controller = vex::controller();
 
-
-vex::motor driveLeftFront = vex::motor(vex::PORT19,vex::gearSetting::ratio18_1,true);
+vex::motor driveLeftFront = vex::motor(vex::PORT19,vex::gearSetting::ratio18_1);
 vex::motor driveRightFront = vex::motor(vex::PORT9,vex::gearSetting::ratio18_1,true);
 
 
 vex::motor lift1 = vex::motor(vex::PORT10,vex::gearSetting::ratio18_1);
 vex::motor lift2 = vex::motor(vex::PORT18,vex::gearSetting::ratio18_1,true);
 vex::motor raise = vex::motor(vex::PORT2,vex::gearSetting::ratio18_1,true);
-
-#include "robot-config.h"
-
-#define waitUntil(condition)                                                   \
-  do {                                                                         \
-    wait(5, msec);                                                             \
-  } while (!(condition))
-
-#define repeat(iterations)                                                     \
-  for (int iterator = 0; iterator < iterations; iterator++)

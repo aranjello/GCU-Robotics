@@ -21,8 +21,7 @@
 vex::brain Brain = vex::brain();
 vex::controller Controller = vex::controller();
 
-
-vex::motor driveLeftFront = vex::motor(vex::PORT19,vex::gearSetting::ratio18_1,true);
+vex::motor driveLeftFront = vex::motor(vex::PORT19,vex::gearSetting::ratio18_1);
 vex::motor driveRightFront = vex::motor(vex::PORT9,vex::gearSetting::ratio18_1,true);
 
 
