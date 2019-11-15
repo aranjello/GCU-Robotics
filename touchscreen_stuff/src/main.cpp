@@ -14,27 +14,73 @@ using namespace std;
 
 // A global instance of vex::brain used for printing to the V5 brain screen
 vex::brain       Brain;
+/*defined screen width and height through trial and error, values may not be 100%
+correct but are close enought to not be notible when drawing to the screen
+|---------------------------|
+|*(0,0)                     |
+|                           |
+|                           |
+|                           |
+|                           |
+|(screenWidth,ScreenHeight)*|
+|---------------------------|*/
 int screenHeight = 225;
 int screenWidth = 475;
-// define your global instances of motors and other devices here
 
+/* this function takes in a quadrant number (1-4), a color, and a string and creates
+a rectangle of the color in the quadrant specified with the string printed on top.
+If a quadrant that is not defined is passed in, an error message will appear on screen*/
+void drawQuadrantRect(int quad,color c, string text){
+Brain.Screen.setFillColor(c);
+int x,y,bWidth,bHeight,px,py;
+bWidth = screenWidth/2;
+bHeight = screenHeight/2;
+switch(quad){
+  case 1:
+    x = 0;
+    y = 0;
+    px = 0;
+    py = screenHeight/4;
+    break;
+  case 2:
+    x = screenWidth/2;
+    y = 0;
+    px = screenWidth/2;
+    py = screenHeight/4;
+    break;
+  case 3:
+    x = 0;
+    y = screenHeight/2;
+    px = 0;
+    py = screenHeight/4*3;
+    break;
+  case 4:
+    x = screenWidth/2;
+    y = screenHeight/2;
+    px = screenWidth/2;
+    py = screenHeight/4*3;
+    break;
+  default:
+    x = screenWidth/4;
+    y = screenHeight/4;
+    px = screenWidth/4;
+    py = screenHeight/2;
+    text = "error passed in value that was not 1-4 for quadrant";
+    c = color::red;
+  }
+  Brain.Screen.drawRectangle(x,y,bWidth,bHeight);
+  char p[text.length()];
+  int i; 
+  for (i = 0; i < sizeof(p); i++) { 
+    p[i] = text[i]; 
+  } 
+  Brain.Screen.printAt(px,py,p);
+}
 
 int main() {   
       do {
         Brain.Screen.clearScreen();
         /*
-        for(int i = 0; i < 1000;i++){
-            for(int j = 0; j < 500;j++){
-              vex::color c;
-              c = color(i%50,0,0);
-              Brain.Screen.setPenColor(c);
-              Brain.Screen.drawPixel(i,j);
-              
-            }
-        }
-        // Allow other tasks to run
-        //this_thread::sleep_for(100);
-        */
         color c = color(255,0,0);
         Brain.Screen.setFillColor(c);
         Brain.Screen.drawRectangle(0, 0, screenWidth/2, screenHeight/2);
@@ -56,6 +102,13 @@ int main() {
         Brain.Screen.printAt(screenWidth/2,screenHeight/4*3,"Section 4");
         Brain.Screen.drawLine(0, screenHeight/2, screenWidth, screenHeight/2);
         Brain.Screen.drawLine(screenWidth/2,0,screenWidth/2,screenHeight);
-        
+        */
+        drawQuadrantRect(1,color::red,"quad 1");
+        drawQuadrantRect(2,color::green,"quad 2");
+        drawQuadrantRect(3,color::blue,"quad 3");
+        drawQuadrantRect(4,color::yellow,"quad 4");
+        drawQuadrantRect(5, color::white, "quad 5");
     }while(0);
 }
+
+
