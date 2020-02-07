@@ -45,6 +45,14 @@ void BReleased(){
   lift1.spin(fwd,0,pct);
   lift2.spin(fwd,0,pct);
 }
+void L1Pressed(){
+  lift3.spin(fwd,10,pct);
+  lift4.spin(fwd,10,pct);
+}
+void R1Pressed(){
+  lift3.spin(fwd,-10,pct);
+  lift4.spin(fwd,-10,pct);
+}
 //When the Up button is pressed, spin the raise motor at 10% speed
 void UPPressed(){
   raise.spin(fwd,10,pct);
@@ -121,6 +129,8 @@ void usercontrol(){
     Controller.ButtonDown.released(DownReleased);
     Controller.ButtonLeft.pressed(sensitivityUp);
     Controller.ButtonRight.pressed(sensitivityDown);
+    Controller.ButtonL1.pressed(L1Pressed);
+    Controller.ButtonR1.pressed(R1Pressed);
     int count = 0;
     while (true) {
         //drive
