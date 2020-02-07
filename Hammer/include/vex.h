@@ -27,6 +27,10 @@ vex::motor driveRightBack = vex::motor(vex::PORT11,vex::gearSetting::ratio18_1);
 vex::motor driveLeftBack = vex::motor(vex::PORT12,vex::gearSetting::ratio18_1,true);
 
 
-vex::motor lift1 = vex::motor(vex::PORT1,vex::gearSetting::ratio18_1);
-vex::motor lift2 = vex::motor(vex::PORT3,vex::gearSetting::ratio18_1,true);
-vex::motor raise = vex::motor(vex::PORT2,vex::gearSetting::ratio18_1,true);
+vex::motor lift1 = vex::motor(vex::PORT14,vex::gearSetting::ratio18_1);
+vex::motor lift2 = vex::motor(vex::PORT18,vex::gearSetting::ratio18_1,true);
+
+vex::motor lift3 = vex::motor(vex::PORT20,vex::gearSetting::ratio18_1);
+vex::motor lift4 = vex::motor(vex::PORT13,vex::gearSetting::ratio18_1,true);
+
+vex::motor raise = vex::motor(vex::PORT19,vex::gearSetting::ratio18_1,true);
